@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="Пример создания сервиса  уведомления"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/head"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="запустить сервис"
+        android:id="@+id/start_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/head"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="остановить службу"
+        android:id="@+id/stopButton"
+        app:layout_constraintLeft_toRightOf="@+id/start_button"
+        app:layout_constraintTop_toBottomOf="@+id/head"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hour"
+        android:hint="часы"
+        app:layout_constraintTop_toBottomOf="@+id/start_button"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <EditText
+        android:hint="минуты"
+        android:id="@+id/minutes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/hour"
+        app:layout_constraintTop_toBottomOf="@+id/start_button"/>
+    <EditText
+        android:hint="секунды"
+        android:id="@+id/seconds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/minutes"
+        app:layout_constraintTop_toBottomOf="@+id/start_button"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
