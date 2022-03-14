@@ -24,8 +24,6 @@ import java.util.concurrent.TimeUnit;
 
 public class MusicService extends Service {
     MediaPlayer mediaPlayer;
-    private Timer mTimer;
-    private MyTimerTask mMyTimerTask;
     public boolean timer=false;
 
     public MusicService() {
@@ -46,6 +44,24 @@ public class MusicService extends Service {
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        /*String hours_text=intent.getStringExtra("hours");
+        String minutes_text=intent.getStringExtra("minutes");
+        String seconds_text=intent.getStringExtra("seconds");
+        int hours_number=-1;
+        int minutes_number=-1;
+        int seconds_number=-1;
+        try {
+            hours_number=Integer.parseInt(hours_text);
+            minutes_number=Integer.parseInt(minutes_text);
+            seconds_number=Integer.parseInt(seconds_text);
+        }catch (NumberFormatException e){
+            Toast.makeText(getApplicationContext(), "введите числа", Toast.LENGTH_SHORT).show();
+        }
+        try {
+            TimeUnit.SECONDS.sleep(seconds_number+minutes_number*60+hours_number*3600);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         //создание интента обратной связи
         Intent intent1=new Intent(this,MainActivity.class);
@@ -68,25 +84,8 @@ public class MusicService extends Service {
         //создать уведомление
         Notification notification=nBuilder.build();
         //показать уведомление
-        String hours_text=intent.getStringExtra("hours");
-        String minutes_text=intent.getStringExtra("minutes");
-        String seconds_text=intent.getStringExtra("seconds");
-        int hours_number=-1;
-        int minutes_number=-1;
-        int seconds_number=-1;
-        try {
-            hours_number=Integer.parseInt(hours_text);
-            minutes_number=Integer.parseInt(minutes_text);
-            seconds_number=Integer.parseInt(seconds_text);
-        }catch (NumberFormatException e){
-            Toast.makeText(getApplicationContext(), "введите числа", Toast.LENGTH_SHORT).show();
-        }
-        try {
-            TimeUnit.SECONDS.sleep(seconds_number+minutes_number*60+hours_number*3600);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        /*if (mTimer != null) {
+
+        *//*if (mTimer != null) {
             mTimer.cancel();
         }
         if(hours_number!=-1&&minutes_number!=-1&&seconds_number!=-1) {
@@ -97,8 +96,8 @@ public class MusicService extends Service {
         }
         while(!timer) {
 
-        }*/
-        manager.notify(475648, notification);
+        }*//*
+        manager.notify(475648, notification);*/
 
         //удаление уведомления
         //manager.cancel(475648);

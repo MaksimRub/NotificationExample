@@ -3,6 +3,7 @@ package com.example.notificationexample;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +16,7 @@ import java.util.TimerTask;
 public class MainActivity extends AppCompatActivity {
     Button start_button,stop_button;
     EditText hours,minutes,seconds;
+
 
 
     @Override
@@ -35,11 +37,15 @@ public class MainActivity extends AppCompatActivity {
                 String hours_text=hours.getText().toString();
                 String minutes_text=minutes.getText().toString();
                 String seconds_text=seconds.getText().toString();
-                Intent intent=new Intent(MainActivity.this,MusicService.class);
+                Intent intent=new Intent(MainActivity.this,MyIntentService.class);
                 intent.putExtra("hours",hours_text);
                 intent.putExtra("minutes",minutes_text);
                 intent.putExtra("seconds",seconds_text);
                 startService(intent);
+                Intent intent1=new Intent(MainActivity.this,MusicService.class);
+                startService(intent1);
+
+
 
 
             }
@@ -48,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                stopService(new Intent(MainActivity.this,MyIntentService.class));
                 stopService(new Intent(MainActivity.this,MusicService.class));
 
             }

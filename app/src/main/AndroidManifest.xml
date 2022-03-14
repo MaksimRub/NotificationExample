@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NotificationExample">
         <service
+            android:name=".MyIntentService"
+            android:exported="false"></service>
+        <service
             android:name=".MusicService"
             android:enabled="true"
             android:exported="true" />
